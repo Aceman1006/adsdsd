@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { background: #0b0b0e; color: #f4ead3; overflow-x: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+::selection { background: #f2b632; color: #0b0b0e; }
+
+.dotgrid {
+  background-image: radial-gradient(rgba(244,234,211,.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.paper {
+  background: linear-gradient(180deg, #f7eed9, #ead9b2);
+  color: #1a1408;
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-black px-5 py-3 font-bold transition active:translate-x-[2px] active:translate-y-[2px] active:shadow-none disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-gold { @apply btn bg-gold text-ink shadow-chunk hover:-translate-y-0.5; }
+  .btn-paper { @apply btn bg-paper text-ink shadow-chunk hover:-translate-y-0.5; }
+  .btn-ghost { @apply inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 font-semibold text-paper/90 hover:border-gold hover:text-gold transition; }
+  .card { @apply rounded-2xl border border-line bg-ink2; }
+  .input { @apply w-full rounded-xl border border-line bg-ink px-4 py-3 font-mono text-sm text-paper placeholder:text-mute/70 outline-none focus:border-gold; }
+  .label { @apply mb-1.5 block font-mono text-[11px] uppercase tracking-widest text-mute; }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-ink px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-mute; }
+}
